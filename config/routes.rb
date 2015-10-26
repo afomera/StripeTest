@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :episodes
   resource :subscription
 
-  root to: 'pages#home'
+  root to: 'episodes#index'
 
 
 end
