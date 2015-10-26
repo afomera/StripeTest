@@ -10,4 +10,8 @@
   <%= @episode.description %>
 </p>
 
-<%= link_to "Subscribe to watch", new_subscription_path, class: "btn btn-primary" %>
+<% if current_user_subscribed? %>
+  Haiahaha secret to only subscrbed!
+<% else %>
+  <%= link_to "Subscribe to watch", new_subscription_path, class: "btn btn-primary" %>
+<% end %>
