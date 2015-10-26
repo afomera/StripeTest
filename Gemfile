@@ -24,3 +24,4 @@ end
 
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'font-awesome-rails', '~> 4.4'
