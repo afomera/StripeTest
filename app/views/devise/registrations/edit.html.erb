@@ -38,8 +38,10 @@
     <p>Your current card on file</p>
     <div><%= current_user.card_type %> **** **** **** <%= current_user.card_last4 %></div>
     <div>Expires <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %></div>
+    <p><%= link_to "Use a different card", "#", class: "use-diffent-card" %></p>
 
   <hr />
+  <div class="card-fields <%= card_fields_class %>">
     <%= form_tag card_path, method: :put, id: "payment-form" do %>
       <span class="payment-errors"></span>
 
@@ -68,7 +70,7 @@
 
       <button type="submit">Update Card</button>
     <% end %>
-
+  </div>
 
     <h3>Cancel my account</h3>
 
