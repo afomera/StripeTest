@@ -82,12 +82,12 @@
       <div class="form-group">
         <button type="submit" class="btn btn-success btn-md btn-block" data-disable-with="<i class='fa fa-spinner fa-spin'></i>">Update Card</button>
       </div>
-</div> <!-- End CC form col -->
+    </div> <!-- End CC form col -->
     <% end %>
   </div>
 
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", subscription_path, data: { confirm: "Are you sure you want to cancel your subscription?" }, method: :delete %></p>
+    <p>Unhappy? <%= button_to "Cancel my account", subscription_path, class: "btn btn-danger", data: { confirm: "Are you sure you want to cancel your subscription?" }, method: :delete %></p>
 
 <% end %>
