@@ -41,34 +41,48 @@
     <p><%= link_to "Use a different card", "#", class: "use-diffent-card" %></p>
 
   <hr />
-  <div class="card-fields <%= card_fields_class %>">
+  <div class="card-fields <%= card_fields_class %> col-sm-3">
     <%= form_tag card_path, method: :put, id: "payment-form" do %>
-      <span class="payment-errors"></span>
+      <p class="payment-errors text-center text-danger"></p>
 
-      <div class="form-row">
-        <label>
-          <span>Card Number</span>
-          <input value="4242 4242 4242 4242" type="text" size="20" data-stripe="number"/>
-        </label>
+      <div class="form-group">
+            <label>
+              <span>Card Number</span>
+            </label>
+              <input value="4242 4242 4242 4242" type="text" size="20" data-stripe="number" class="form-control"/>
+
       </div>
 
-      <div class="form-row">
-        <label>
-          <span>CVC</span>
-          <input value="123" type="text" size="4" data-stripe="cvc"/>
-        </label>
-      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Expiration </label>
+            <input value="12" type="text" size="2" placeholder="MM" data-stripe="exp-month" class="form-control"/>
+          </div>
+        </div>
 
-      <div class="form-row">
-        <label>
-          <span>Expiration (MM/YYYY)</span>
-          <input value="12" type="text" size="2" data-stripe="exp-month"/>
-        </label>
-        <span> / </span>
-        <input value="2020" type="text" size="4" data-stripe="exp-year"/>
-      </div>
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <input value="2020" type="text" size="4" placeholder="YYYY" data-stripe="exp-year" class="form-control"/>
+          </div>
+        </div>
 
-      <button type="submit">Update Card</button>
+        <div class="col-sm-3 col-sm-offset-3">
+          <div class="form-group">
+            <label>
+              <span>CVC</span>
+            </label>
+
+            <input value="123" type="text" size="4" data-stripe="cvc" class="form-control"/>
+          </div>
+        </div>
+      </div><!-- End row -->
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-md btn-block" data-disable-with="<i class='fa fa-spinner fa-spin'></i>">Update Card</button>
+      </div>
+</div> <!-- End CC form col -->
     <% end %>
   </div>
 
